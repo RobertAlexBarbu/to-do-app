@@ -1,13 +1,157 @@
+:root {
+    --grayMedium: #D9D9D9;
+    --black: #262626;
+}
+@font-face {
+    font-family: outfit-bold;
+    src: url(./fonts/Outfit-Bold.ttf);
+}
+@font-face {
+    font-family: outfit-light;
+    src: url(./fonts/Outfit-Light.ttf);
+}
+html {
+    font-size: max(1vh, 2px);
+    font-family: outfit-bold;
+}
+html * {
+    box-sizing: border-box;
+}   
 html, body {
     width: 100%;
     height: 100%;
 }
-body, h1 {
+body {
     margin: 0;
-    color: red;
 }
-#svg {
-    background-image: url(./calendar-check-outline.svg);
-    width: 50px;
-    height: 50px;
+#header {
+    height: 8%;
+    width: 100%;
+    background-color: var(--grayMedium);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 4px;
+    padding-left: 10px;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+}
+#header .logo {
+    width: 6rem;
+    height: 6rem;
+}
+#header .app-name {
+    font-size: 4rem;
+}
+
+#footer {
+    height: 16%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+#footer .footer-element {
+    height: 50%;
+    width: 100%;
+    background-color: var(--grayMedium);
+    position: absolute;
+    bottom: 0px;
+}
+
+#menu {
+    height: 16%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu .menu-element {
+    height: 50%;
+    width: min(90%, 400px);
+    background-color: var(--black);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7rem;
+}
+.create-project, .add-task, .info {
+    width: 5rem;
+    height: 5rem;
+}
+
+#content {
+    width: 100%;
+    position: relative;
+    top: 8%;
+    background-color: red;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(12, min(8.33%, 65px));
+
+}
+#main-content {
+    grid-column: 1/-1;
+    background-color: yellow;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 16vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+#main-content .projects-title, .tasks-title {
+    background-color: blue;
+    height: min-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.projects-icon, .tasks-icon {
+    width: 5rem;
+    height: 5rem;
+}
+.projects-text, .tasks-text {
+    font-size: 4rem;
+}
+.projects-section, .tasks-section{
+    height: 30vh;
+    width: calc( 100% - min(4%, 65px));
+    background-color: green;
+    align-self: center;
+}
+.projects-section {
+    margin-bottom: 30px;
+}
+.tasks-section {
+    height: 600px;
+}
+.projects-section .current {
+    width: 100%;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.current .delete-icon {
+    width: 2.5rem;
+    margin-left: auto;
+}
+.current .current-text {
+    font-family: outfit-light;
+    font-size: 2rem;
+}
+.current .current-project {
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
