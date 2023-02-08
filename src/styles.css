@@ -89,15 +89,14 @@ body {
     position: relative;
     top: 8%;
     background-color: red;
-    display: grid;
+    display: flex;
     justify-content: center;
-    grid-template-columns: repeat(12, min(8.33%, 65px));
 
 }
 #main-content {
-    grid-column: 1/-1;
-    background-color: yellow;
+    background-color: white;
     height: 100%;
+    width: min(100%, 800px);
     padding-top: 15px;
     padding-bottom: 16vh;
     display: flex;
@@ -110,18 +109,19 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
 }
 .projects-icon, .tasks-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
 }
 .projects-text, .tasks-text {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 .projects-section, .tasks-section{
     height: 30vh;
-    width: calc( 100% - min(4%, 65px));
+    width: calc(100% - 6rem);
+    margin-left: 3rem;
+    margin-right: 3rem;
     background-color: green;
     align-self: center;
 }
@@ -129,29 +129,43 @@ body {
     margin-bottom: 30px;
 }
 .tasks-section {
-    height: 600px;
+    height: 1600px;
 }
-.projects-section .current {
+.current {
     width: 100%;
-    background-color: purple;
+    background-color: rgb(215, 87, 215);
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 20px;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 3px;
+    position: sticky;
+    top: 8vh;
+    z-index: 0;
+    width: 100%;
+    align-self: center;
+    padding: 4px;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 .current .delete-icon {
-    width: 2.5rem;
+    width: 3rem;
     margin-left: auto;
 }
 .current .current-text {
     font-family: outfit-light;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .current .current-project {
-    font-size: 1.5rem;
+    font-size: 2rem;
     background-color: white;
     border-radius: 20px;
     padding: 2px;
     padding-left: 8px;
     padding-right: 8px;
 }
+/*
+    TO DO
+    WRAP TRASH BINE AND CURRENT PROJECT TOGHETER
+*/
