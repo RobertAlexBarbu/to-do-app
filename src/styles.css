@@ -96,6 +96,9 @@ body {
     align-items: center;
     column-gap: 7rem;
 }
+.menu-element > *:hover {
+    cursor: pointer;
+}
 .create-project, .add-task, .info {
     width: 5rem;
     height: 5rem;
@@ -166,8 +169,11 @@ body {
     padding-right: 3rem;
 }
 .settings-icon {
-    width: 2rem;
+    width: 3rem;
     margin-left: auto;
+}
+.settings-icon:hover {
+    cursor: pointer;
 }
 .current-text, .my-projects {
     font-family: outfit-light;
@@ -184,6 +190,9 @@ body {
     font-family: outfit-regular;
     color: var(--blue);
     border: 1.5px solid var(--blue);
+}
+.project:hover {
+    cursor: pointer;
 }
 .project.current-project {
     color: white;

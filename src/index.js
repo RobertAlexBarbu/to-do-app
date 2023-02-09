@@ -1,56 +1,11 @@
 import "./styles.css";
 import Project from "./Project";
 
-function createProjectComponent(project) {
-  const projectComponent = document.createElement("div");
-  projectComponent.classList.add("project");
-  projectComponent.textContent = project.name;
-  projectComponent.addEventListener("click", () => {
-    const selectedName = project.name;
-    let i = 0;
-    for (const currentProject of projectsArray) {
-      if (currentProject.name === selectedName) {
-        break;
-      }
-      i++;
-    }
-    setCurrentProject(i);
-    renderProjects(projectsArray);
-  });
-  return projectComponent;
-}
-const projectsSection = document.querySelector(".projects");
-/* Projects Array */
-const projectsArray = [
-  new Project("Default Project"),
-  new Project("Default Project 2"),
-  new Project("Important Project"),
-];
-/* RENDER PROJECTS */
-function renderProjects(projectsArray) {
-  projectsSection.textContent = "";
-  for (const currentProject of projectsArray) {
-    const project = createProjectComponent(currentProject);
-    if (currentProject.current === true) {
-      project.classList.add("current-project");
-    }
-    projectsSection.appendChild(project);
-  }
-}
-renderProjects(projectsArray);
-/* CURRENT FUNCTIONALITY */
-let currentProject = 0;
-const currentProjectElement = document.querySelector("#current-block");
-function setCurrentProject(newCurrent) {
-  currentProjectElement.textContent = projectsArray[newCurrent].name;
-  projectsArray[currentProject].current = false;
-  projectsArray[newCurrent].current = true;
-  currentProject = newCurrent;
-}
-setCurrentProject(0);
-renderProjects(projectsArray);
-setCurrentProject(1);
-renderProjects(projectsArray);
+
+Project.initializeDefault();
+Project.setCurrent(0);
+Project.render();
+
 /* CREATE NEW PROJECT FUNCTIONALITY */
 const newProjectModular = document.querySelector(".create-project-modular");
 
@@ -85,8 +40,11 @@ const createNewProjectBtn = document.querySelector("#create-new-btn");
 createNewProjectBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (inputNewProjectName.reportValidity() === true) {
-    projectsArray.push(new Project(inputNewProjectName.value));
-    renderProjects(projectsArray);
+    /* eslint-disable no-new */
+    new Project(inputNewProjectName.value);
+    Project.render();
     newProjectModular.classList.remove("visible");
   }
 });
+
+
