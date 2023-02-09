@@ -7,13 +7,19 @@ export default class Project {
         Project.projects.push(this);
     }
     static projects = [];
-    static currentProject = 0;
+    static storeLocal() {
+        localStorage.setItem('projects', JSON.stringify(Project.projects));
+    }
     static setCurrent(newCurrent) {
-        const currentProject = document.querySelector("#current-block");
-        currentProject.textContent = Project.projects[newCurrent].name;
-        Project.projects[Project.currentProject].current = false;
+        const currentBlock = document.querySelector('#current-block');
+        for(const current of Project.projects) {
+            if(current.current === true) {
+                current.current = false;
+            }
+        }
         Project.projects[newCurrent].current = true;
-        Project.currentProject = newCurrent;
+        currentBlock.textContent = Project.projects[newCurrent].name;
+        Project.storeLocal();
     }
     static render() {
         const projectsSection = document.querySelector(".projects");
@@ -35,14 +41,18 @@ export default class Project {
           })
           if (currentProject.current === true) {
             project.classList.add("current-project");
+            const currentBlock = document.querySelector('#current-block');
+            currentBlock.textContent = currentProject.name;
           }
           projectsSection.appendChild(project);
         }
-    }
+    }    
     static initializeDefault() {
         /* eslint-disable no-new */
-        new Project("Default Project");
+        const first = new Project("Default Project");
+        first.current = true;
         new Project("Default Project 2");
         new Project("Important Project");
+        Project.storeLocal();
     }
 };

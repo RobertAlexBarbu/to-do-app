@@ -1,10 +1,14 @@
 import "./styles.css";
 import Project from "./Project";
 
-
-Project.initializeDefault();
-Project.setCurrent(0);
-Project.render();
+if(localStorage.active === undefined) {
+    Project.initializeDefault();
+    Project.render();   
+} else {
+    Project.projects = [...JSON.parse(localStorage.getItem('projects'))]
+    Project.render();   
+}
+   
 
 /* CREATE NEW PROJECT FUNCTIONALITY */
 const newProjectModular = document.querySelector(".create-project-modular");
@@ -42,6 +46,8 @@ createNewProjectBtn.addEventListener("click", (event) => {
   if (inputNewProjectName.reportValidity() === true) {
     /* eslint-disable no-new */
     new Project(inputNewProjectName.value);
+    Project.storeLocal();
+    localStorage.setItem('active', 'true');
     Project.render();
     newProjectModular.classList.remove("visible");
   }
