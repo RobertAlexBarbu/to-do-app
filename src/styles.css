@@ -6,6 +6,7 @@
     --black: #262626;
     --white: #fafafa;
     --blue: #38BDF8;
+    --red: #dc2626;
 }
 @font-face {
     font-family: outfit-bold;
@@ -182,7 +183,7 @@ body {
     font-size: 2.2rem;
 }
 .project {
-    height: min-content;
+    height: calc(1.7rem + 8px);
     font-size: 1.7rem;
     background-color: white;
     border-radius: 20px;
@@ -342,4 +343,12 @@ body {
 
 .visible {
     visibility: visible;
+}
+.error {
+    height: 2.2rem;
+    padding-left: 7%;
+    font-size: 2rem;
+    font-family: outfit-regular;
+    padding-top: 2px;
+    color: var(--red);
 }
