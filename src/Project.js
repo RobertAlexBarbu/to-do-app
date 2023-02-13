@@ -1,4 +1,5 @@
 export default class Project {
+
   name;
   tasks;
   current = false;
@@ -6,11 +7,12 @@ export default class Project {
     this.name = name;
     Project.projects.push(this);
   }
+
   static projects = [];
   static storeLocal() {
     localStorage.setItem("projects", JSON.stringify(Project.projects));
   }
-  static setCurrent(newCurrent) {
+  static #setCurrent(newCurrent) {
     localStorage.setItem("active", "true");
     const currentBlock = document.querySelector("#current-block");
     for (const current of Project.projects) {
@@ -22,7 +24,7 @@ export default class Project {
     currentBlock.textContent = Project.projects[newCurrent].name;
     Project.storeLocal();
   }
-  static render() {
+  static renderProjects() {
     const projectsSection = document.querySelector(".projects");
     projectsSection.textContent = "";
     for (const currentProject of Project.projects) {
@@ -37,8 +39,8 @@ export default class Project {
           }
           i += 1;
         }
-        Project.setCurrent(i);
-        Project.render();
+        Project.#setCurrent(i);
+        Project.renderProjects();
       });
       if (currentProject.current === true) {
         project.classList.add("current-project");
@@ -48,13 +50,13 @@ export default class Project {
       projectsSection.appendChild(project);
     }
   }
-  static renderProjects() {
+  static renderInitial() {
     if (localStorage.active === undefined) {
       Project.#initializeDefault();
-      Project.render();
+      Project.renderProjects();
     } else {
       Project.projects = [...JSON.parse(localStorage.getItem("projects"))];
-      Project.render();
+      Project.renderProjects();
     }
   }
   static #initializeDefault() {

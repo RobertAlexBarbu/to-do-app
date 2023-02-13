@@ -1,7 +1,7 @@
 import "./styles.css";
 import Project from "./Project";
-import createNewProjectDOM from "./createNewProjectDOM";
+import newProjectModular from "./newProjectModular";
 
-Project.renderProjects();
-createNewProjectDOM();
+Project.renderInitial();
+newProjectModular();
 

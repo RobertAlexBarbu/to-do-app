@@ -1,6 +1,6 @@
 import Project from "./Project";
 
-export default function createNewProjectDOM() {
+export default function newProjectModular() {
 
   /* CREATE NEW PROJECT FUNCTIONALITY */
   const newProjectModular = document.querySelector(".create-project-modular");
@@ -16,13 +16,18 @@ export default function createNewProjectDOM() {
   });
 
   /* Close */
+  let invalid = false;
+  const errorNewProject = document.querySelector('.error');
+
   function closeNewProjectModular() {
     newProjectModular.classList.remove("visible");
+    invalid = false;
+    errorNewProject.textContent = "";
   }
 
   newProjectModular.addEventListener("click", closeNewProjectModular);
 
-  const closeNewProjectIcon = document.querySelector("#close-new-project-icon");
+  const closeNewProjectIcon = document.querySelector(".close-new-project-icon");
   closeNewProjectIcon.addEventListener("click", closeNewProjectModular);
 
   const cancelNewProjectBtn = document.querySelector("#cancel-new-btn");
@@ -35,8 +40,8 @@ export default function createNewProjectDOM() {
   });
 
   /* Create */
-  const errorNewProject = document.querySelector('.error');
-  let invalid = false;
+  
+  
   inputNewProjectName.addEventListener('input', (event)=>{
     invalid = false;
     errorNewProject.textContent = "";
@@ -61,7 +66,7 @@ export default function createNewProjectDOM() {
       new Project(inputNewProjectName.value);
       Project.storeLocal();
       localStorage.setItem("active", "true");
-      Project.render();
+      Project.renderProjects();
       newProjectModular.classList.remove("visible");
       console.log(inputNewProjectName);
     }

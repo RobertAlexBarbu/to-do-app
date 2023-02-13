@@ -89,13 +89,13 @@ body {
 }
 #menu .menu-element {
     height: 50%;
-    width: min(90%, 400px);
+    width: min(90%, 450px);
     background-color: var(--black);
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 7rem;
+    column-gap: 6rem;
 }
 .menu-element > *:hover {
     cursor: pointer;
@@ -183,11 +183,10 @@ body {
     font-size: 2.2rem;
 }
 .project {
-    height: calc(1.7rem + 8px);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     background-color: white;
     border-radius: 20px;
-    padding: 2px;
+    padding: 4px;
     padding-left: 12px;
     padding-right: 12px;
     font-family: outfit-regular;
@@ -261,11 +260,11 @@ body {
 }
 
 /* MODULARS */
-/* Create Project */
-.create-project-modular {
+
+.create-project-modular, .project-settings-modular {
     width: 100%;
     height: 100%;
-    background-color: #26262670;
+    background-color: #3a3a3a50;
     position: fixed;
     top: 0;
     z-index: 2;
@@ -274,6 +273,42 @@ body {
     align-items: center;
     visibility: hidden;
 }
+.visible {
+    visibility: visible;
+}
+.form-text, .settings-text {
+    font-size: 2.8rem;
+    font-family: outfit-regular;
+    text-align: center;
+    margin-top: 20px;
+}
+.buttons {
+    align-self: center;
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+}
+button {
+    width: 14rem;;
+    height: 4rem;
+    background-color: var(--grayDark);
+    border-radius: 10px;
+    color: white;
+    font-family: outfit-regular;
+    font-size: 2rem;
+    border: 0;
+    text-transform: uppercase;
+}
+.red-btn {
+    background-color: var(--red);
+}
+.blue-btn {
+    background-color: var(--blue);
+}
+/* Create Project */
 .create-project-form {
     width: min(80%, 400px);
     height: min(40%, 400px);
@@ -285,12 +320,7 @@ body {
     flex-direction: column;
     padding: 10px;
 }
-.form-text {
-    font-size: 3rem;
-    font-family: outfit-regular;
-    text-align: center;
-    margin-top: 15px;
-}
+
 .create-project-form label {
     font-size: 2.5rem;
     font-family: outfit-light;
@@ -321,28 +351,6 @@ body {
     outline: none;
     box-shadow: 0 0 0 1px var(--blue);
     border-color: var(--blue);
-}
-#new-project-buttons {
-    align-self: center;
-    margin-top: 35px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-#new-project-buttons button {
-    width: 35%;
-    height: 4rem;
-    background-color: var(--grayDark);
-    border-radius: 10px;
-    color: white;
-    font-family: outfit-regular;
-    font-size: 2rem;
-    border: 0;
-}
-
-.visible {
-    visibility: visible;
 }
 .error {
     height: 2.2rem;
