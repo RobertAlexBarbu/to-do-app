@@ -9,15 +9,19 @@ export default class Project {
   }
 
   static projects = [];
+  static currentProjectIndex;
   static storeLocal() {
     localStorage.setItem("projects", JSON.stringify(Project.projects));
+    localStorage.setItem("currentIndex", JSON.stringify(Project.currentProjectIndex));
   }
   static #setCurrent(newCurrent) {
     localStorage.setItem("active", "true");
     const currentBlock = document.querySelector("#current-block");
+    // maybe this loop is not necessary
     for (const current of Project.projects) {
       if (current.current === true) {
         current.current = false;
+        Project.currentProjectIndex = newCurrent;
       }
     }
     Project.projects[newCurrent].current = true;
@@ -56,6 +60,7 @@ export default class Project {
       Project.renderProjects();
     } else {
       Project.projects = [...JSON.parse(localStorage.getItem("projects"))];
+      Project.currentProjectIndex = JSON.parse(localStorage.getItem("currentIndex"));
       Project.renderProjects();
     }
   }
@@ -63,6 +68,7 @@ export default class Project {
     /* eslint-disable no-new */
     const first = new Project("Default Project");
     first.current = true;
+    Project.currentProjectIndex = 0;
     new Project("Default Project 2");
     new Project("Important Project");
     Project.storeLocal();
