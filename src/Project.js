@@ -14,29 +14,20 @@ export default class Project {
     localStorage.setItem("projects", JSON.stringify(Project.projects));
     localStorage.setItem("currentIndex", JSON.stringify(Project.currentProjectIndex));
   }
-  static #setCurrent(newCurrent) {
-    localStorage.setItem("active", "true");
-    const currentBlock = document.querySelector("#current-block");
-    // maybe this loop is not necessary
-    for (const current of Project.projects) {
-      if (current.current === true) {
-        current.current = false;
-        Project.currentProjectIndex = newCurrent;
-      }
-    }
-    Project.projects[newCurrent].current = true;
-    currentBlock.textContent = Project.projects[newCurrent].name;
-    Project.storeLocal();
-  }
+
   static renderProjects() {
     const projectsSection = document.querySelector(".projects");
     projectsSection.textContent = "";
+    
+    const currentBlock = document.querySelector("#current-block");
+    currentBlock.textContent = Project.projects[Project.currentProjectIndex].name;
+
     for (const currentProject of Project.projects) {
       const project = document.createElement("div");
       project.classList.add("project");
       project.textContent = currentProject.name;
       project.addEventListener("click", (event) => {
-        console.log("hey");
+        localStorage.setItem("active", "true");
         let i = 0;
         for (const current of Project.projects) {
           if (current.name === event.target.textContent) {
@@ -44,14 +35,14 @@ export default class Project {
           }
           i += 1;
         }
-        Project.#setCurrent(i);
+        Project.currentProjectIndex = i;
+        Project.storeLocal();
         Project.renderProjects();
       });
-      if (currentProject.current === true && Project.currentProjectIndex >= 0) {
+      
+      if (currentProject.name === Project.projects[Project.currentProjectIndex].name) {
         project.classList.add("current-project");
-        const currentBlock = document.querySelector("#current-block");
-        currentBlock.textContent = currentProject.name;
-      }
+      } 
       projectsSection.appendChild(project);
     }
   }
@@ -77,8 +68,7 @@ export default class Project {
 
   static #initializeDefault() {
     /* eslint-disable no-new */
-    const first = new Project("Default Project");
-    first.current = true;
+    new Project("Default Project");
     Project.currentProjectIndex = 0;
     new Project("Default Project 2");
     new Project("Important Project");
