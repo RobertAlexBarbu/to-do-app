@@ -68,7 +68,6 @@ export default function newProjectModular() {
       localStorage.setItem("active", "true");
       Project.renderProjects();
       newProjectModular.classList.remove("visible");
-      console.log(inputNewProjectName);
     }
   });
 }

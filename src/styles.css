@@ -200,6 +200,20 @@ body {
     color: white;
     background-color: var(--blue);
 }
+.no-project-selected {
+    color: var(--grayDark);
+    font-family: outfit-light;
+    font-size: 1.8rem;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.no-existing-projects {
+    font-family: outfit-light;
+    font-size: 1.8rem;
+    color: var(--grayDark);
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 .current-project-container {
     display: flex;
     flex-direction: space-between;

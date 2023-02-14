@@ -2,7 +2,6 @@ export default class Project {
 
   name;
   tasks;
-  current = false;
   constructor(name) {
     this.name = name;
     Project.projects.push(this);
@@ -14,13 +13,34 @@ export default class Project {
     localStorage.setItem("projects", JSON.stringify(Project.projects));
     localStorage.setItem("currentIndex", JSON.stringify(Project.currentProjectIndex));
   }
-
   static renderProjects() {
+
     const projectsSection = document.querySelector(".projects");
     projectsSection.textContent = "";
     
+    if(Project.projects.length === 0) {
+      console.log("hey");
+      const noProjects = document.createElement("div");
+      noProjects.classList.add("no-existing-projects")
+      noProjects.textContent = "Empty..."
+      projectsSection.appendChild(noProjects);
+    }
+
+    // modifies current container depending on whether we have or not 
+    // a current project selected
     const currentBlock = document.querySelector("#current-block");
-    currentBlock.textContent = Project.projects[Project.currentProjectIndex].name;
+    const settingsIcon = document.querySelector(".settings-icon");
+    if(Project.currentProjectIndex !== -1) {
+      currentBlock.textContent = Project.projects[Project.currentProjectIndex].name;
+      currentBlock.classList.remove("no-project-selected");
+      currentBlock.classList.add("current-project", "project");
+      settingsIcon.style.visibility = "visible";    
+    } else {
+      currentBlock.textContent = "No project selected";
+      currentBlock.classList.remove("current-project", "project");
+      currentBlock.classList.add("no-project-selected");
+      settingsIcon.style.visibility = "hidden";
+    }
 
     for (const currentProject of Project.projects) {
       const project = document.createElement("div");
@@ -40,17 +60,23 @@ export default class Project {
         Project.renderProjects();
       });
       
-      if (currentProject.name === Project.projects[Project.currentProjectIndex].name) {
-        project.classList.add("current-project");
-      } 
+      // we check if we have a project selected
+      // if we do, we highlight it
+      if(Project.currentProjectIndex !== -1) {
+        if (currentProject.name === Project.projects[Project.currentProjectIndex].name) {
+          project.classList.add("current-project");
+        } 
+      }
       projectsSection.appendChild(project);
     }
+
   }
 
 
   static deleteProject(currentIndex) {
     Project.projects.splice(currentIndex, 1);
     Project.currentProjectIndex = -1;
+    Project.storeLocal();
   }
 
 
