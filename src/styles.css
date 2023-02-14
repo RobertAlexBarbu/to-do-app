@@ -319,7 +319,7 @@ button {
     width: min(80%, 400px);
     height: min(40%, 400px);
     background-color: var(--white);
-    border-radius: 20px;
+    border-radius: 10px;
     position: relative;
     bottom: 5vh;
     display: flex;

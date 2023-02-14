@@ -36,6 +36,7 @@ export default class Project {
       project.classList.add("project");
       project.textContent = currentProject.name;
       project.addEventListener("click", (event) => {
+        console.log("hey");
         let i = 0;
         for (const current of Project.projects) {
           if (current.name === event.target.textContent) {
@@ -46,7 +47,7 @@ export default class Project {
         Project.#setCurrent(i);
         Project.renderProjects();
       });
-      if (currentProject.current === true) {
+      if (currentProject.current === true && Project.currentProjectIndex >= 0) {
         project.classList.add("current-project");
         const currentBlock = document.querySelector("#current-block");
         currentBlock.textContent = currentProject.name;
@@ -54,6 +55,14 @@ export default class Project {
       projectsSection.appendChild(project);
     }
   }
+
+
+  static deleteProject(currentIndex) {
+    Project.projects.splice(currentIndex, 1);
+    Project.currentProjectIndex = -1;
+  }
+
+
   static renderInitial() {
     if (localStorage.active === undefined) {
       Project.#initializeDefault();
@@ -64,6 +73,8 @@ export default class Project {
       Project.renderProjects();
     }
   }
+
+
   static #initializeDefault() {
     /* eslint-disable no-new */
     const first = new Project("Default Project");

@@ -71,4 +71,13 @@ export default function editProjectModular() {
     })
 
     /* DELETE CURRENT PROJECT FUNCTIONALITY */
+    
+    const deleteProjectBtn = document.querySelector("#delete-project-btn");
+    deleteProjectBtn.addEventListener("click", (event=> {
+        event.preventDefault();
+        Project.deleteProject(Project.currentProjectIndex);
+        Project.renderProjects();
+        closeEditProjectModular();
+    }))
+    
 }
