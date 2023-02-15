@@ -91,7 +91,7 @@ body {
     height: 50%;
     width: min(90%, 450px);
     background-color: var(--black);
-    border-radius: 50px;
+    border-radius:10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,7 @@ body {
     width: 100%;
     background-color: var(--white);
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: start;
     flex-wrap: wrap;
     column-gap: 10px;
@@ -185,7 +185,7 @@ body {
 .project {
     font-size: 1.6rem;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 7px;
     padding: 4px;
     padding-left: 12px;
     padding-right: 12px;
@@ -220,7 +220,7 @@ body {
     flex-grow: 1;
     align-items: center;
     padding: 2px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--grayMedium);
 }
 .projects {
     width: 100%;
@@ -249,14 +249,16 @@ body {
     font-size: 3rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    font-family: outfit-regular;
-    border-bottom: 2px dotted var(--black);
+    font-family: outfit-light;
+    border-bottom: 1px solid var(--grayMedium);
+    color: var(--grayDark);
 }
 .tasks {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-content: center;
     padding: 8px;
     padding-top: 16px;
     flex-wrap: wrap;
@@ -266,16 +268,52 @@ body {
 }
 /* Task Card */
 .task {
-    width: 120px;
-    height: 150px;
+    width: 95%;
+    height: max(45px, 3vw);
     background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5px;
 }
+.task-details {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.task-checkbox {
+    appearance: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 7px;
+    border: 1px solid var(--grayMedium);
+    margin-right: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.task-checkbox::before {
+    content: '✔';
+    font-size: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.6rem;
+    visibility: hidden;
+}
+.task-checkbox:checked::before {
+    visibility: visible;
+}
+.task-name {
+    width: 78%;
+    font-family: outfit-regular;
+    font-size: 2rem;
+}
+.edit-task-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+}
+/* MODALS */
 
-/* MODULARS */
-
-.create-project-modular, .edit-project-modular {
+.create-project-modal, .edit-project-modal {
     width: 100%;
     height: 100%;
     background-color: #3a3a3a50;
@@ -309,7 +347,7 @@ button {
     width: 14rem;;
     height: 4rem;
     background-color: var(--grayDark);
-    border-radius: 10px;
+    border-radius: 7px;
     color: white;
     font-family: outfit-regular;
     font-size: 2rem;
@@ -330,15 +368,23 @@ button {
 }
 /* Create Project */
 .create-project-form, .edit-project-form {
-    width: min(80%, 400px);
-    height: min(40%, 400px);
+    width: min(90%, 400px);
+    height: min(45%, 450px);
     background-color: var(--white);
     border-radius: 10px;
     position: relative;
     bottom: 5vh;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
+    padding-bottom: 40px;
+
+    transform: scale(0);
+    transition: 0.15s ease-in;
+}
+.active {
+    transform: scale(1);
+    
 }
 
 .create-project-form label, .edit-project-form label {
@@ -361,7 +407,7 @@ button {
     appearance: none;
     height: 4.5rem;
     font-size: 2rem;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 2px solid var(--grayMedium);
     padding-left: 10px;
     padding-right: 10px;
@@ -380,3 +426,4 @@ button {
     padding-top: 2px;
     color: var(--red);
 }
+

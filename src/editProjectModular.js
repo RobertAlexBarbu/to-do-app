@@ -1,39 +1,43 @@
 import Project from "./Project";
 
-export default function editProjectModular() {
+export default function editProjectModal() {
 
-    const editProjectModular = document.querySelector(".edit-project-modular");
+    const editProjectModal = document.querySelector(".edit-project-modal");
   
     /* the form control */
     const inputEditProjectName = document.querySelector("#project-edit-input");
-  
-    /* Open */
-    const editProjectIcon = document.querySelector(".settings-icon");
-    editProjectIcon.addEventListener("click", () => {
-      editProjectModular.classList.add("visible");
-      inputEditProjectName.value = "";
-      inputEditProjectName.value = Project.projects[Project.currentProjectIndex].name;
-    });
 
-    /* Close */ 
-  
-    function closeEditProjectModular() {
-      editProjectModular.classList.remove("visible");
-    }
-  
-    editProjectModular.addEventListener("click", closeEditProjectModular);
-  
-    const closeEditProjectIcon = document.querySelector(".close-edit-project-icon");
-    closeEditProjectIcon.addEventListener("click", closeEditProjectModular);
-  
-    const cancelEditProjectBtn = document.querySelector("#cancel-edit-btn");
-    cancelEditProjectBtn.addEventListener("click", closeEditProjectModular);
-    
     // stop propagation
     const editProjectForm = document.querySelector(".edit-project-form");
     editProjectForm.addEventListener("click", (event) => {
       event.stopPropagation();
     });
+  
+    /* Open */
+    const editProjectIcon = document.querySelector(".settings-icon");
+    editProjectIcon.addEventListener("click", () => {
+      editProjectModal.classList.add("visible");
+      inputEditProjectName.value = "";
+      inputEditProjectName.value = Project.projects[Project.currentProjectIndex].name;
+      editProjectForm.classList.add("active");
+    });
+
+    /* Close */ 
+  
+    function closeEditProjectModal() {
+      editProjectModal.classList.remove("visible");
+      editProjectForm.classList.remove("active");
+    }
+  
+    editProjectModal.addEventListener("click", closeEditProjectModal);
+  
+    const closeEditProjectIcon = document.querySelector(".close-edit-project-icon");
+    closeEditProjectIcon.addEventListener("click", closeEditProjectModal);
+  
+    const cancelEditProjectBtn = document.querySelector("#cancel-edit-btn");
+    cancelEditProjectBtn.addEventListener("click", closeEditProjectModal);
+    
+
 
     /* EDIT CURRENT PROJECT FUNCTIONALITY */
     let invalid = false;
@@ -65,7 +69,7 @@ export default function editProjectModular() {
             Project.projects[Project.currentProjectIndex].name = inputEditProjectName.value;
             Project.storeLocal();
             Project.renderProjects();
-            closeEditProjectModular();
+            closeEditProjectModal();
         }
 
     })
@@ -77,7 +81,7 @@ export default function editProjectModular() {
         event.preventDefault();
         Project.deleteProject(Project.currentProjectIndex);
         Project.renderProjects();
-        closeEditProjectModular();
+        closeEditProjectModal();
     }))
     
 }

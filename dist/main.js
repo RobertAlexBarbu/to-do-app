@@ -10,123 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
-  \**************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n// Imports\n\n\n\nvar ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/Outfit-Bold.ttf */ \"./src/fonts/Outfit-Bold.ttf\"), __webpack_require__.b);\nvar ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/Outfit-Light.ttf */ \"./src/fonts/Outfit-Light.ttf\"), __webpack_require__.b);\nvar ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/Outfit-Regular.ttf */ \"./src/fonts/Outfit-Regular.ttf\"), __webpack_require__.b);\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\\n:root {\\n    --grayMedium: #D9D9D9;\\n    --grayLight: #EEEEEE;\\n    --grayDark: #525252;\\n    --black: #262626;\\n    --white: #fafafa;\\n    --blue: #38BDF8;\\n}\\n@font-face {\\n    font-family: outfit-bold;\\n    src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\n}\\n@font-face {\\n    font-family: outfit-light;\\n    src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \");\\n}\\n@font-face {\\n    font-family: outfit-regular;\\n    src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \");\\n}\\nhtml {\\n    font-size: max(1vh, 2px);\\n    font-family: outfit-bold;\\n}\\nhtml * {\\n    box-sizing: border-box;\\n}   \\nhtml, body {\\n    width: 100%;\\n    height: 100%;\\n}\\nbody {\\n    margin: 0;\\n    background-color: var(--white);\\n}\\n\\n\\n/* HEADER */\\n#header {\\n    height: 8%;\\n    width: 100%;\\n    background-color: var(--grayMedium);\\n    display: flex;\\n    justify-content: start;\\n    align-items: center;\\n    column-gap: 4px;\\n    padding-left: 10px;\\n    position: fixed;\\n    top: 0px;\\n    z-index: 1;\\n}\\n#header .logo {\\n    width: 6rem;\\n    height: 6rem;\\n}\\n#header .app-name {\\n    font-size: 4rem;\\n}\\n\\n\\n/* FOOTER */\\n#footer {\\n    height: 16%;\\n    width: 100%;\\n    position: fixed;\\n    bottom: 0px;\\n}\\n#footer .footer-element {\\n    height: 50%;\\n    width: 100%;\\n    background-color: var(--grayMedium);\\n    position: absolute;\\n    bottom: 0px;\\n}\\n\\n\\n/* MENU */\\n#menu {\\n    height: 16%;\\n    width: 100%;\\n    position: fixed;\\n    bottom: 0px;\\n    z-index: 1;\\n    display: flex;\\n    justify-content: center;\\n    align-items: center;\\n}\\n#menu .menu-element {\\n    height: 50%;\\n    width: min(90%, 400px);\\n    background-color: var(--black);\\n    border-radius: 50px;\\n    display: flex;\\n    justify-content: center;\\n    align-items: center;\\n    column-gap: 7rem;\\n}\\n.create-project, .add-task, .info {\\n    width: 5rem;\\n    height: 5rem;\\n}\\n\\n\\n/* CONTENT */\\n#content {\\n    width: 100%;\\n    position: relative;\\n    top: 8%;\\n    display: flex;\\n    justify-content: center;\\n\\n}\\n#main-content {\\n    background-color: var(--white);\\n    height: 100%;\\n    width: min(100%, 800px);\\n    padding-top: 15px;\\n    padding-bottom: 16vh;\\n    display: flex;\\n    flex-direction: column;\\n}\\n#main-content .projects-title, .tasks-title {\\n    background-color: var(--white);\\n    height: min-content;\\n    display: flex;\\n    justify-content: start;\\n    align-items: center;\\n}\\n.projects-icon, .tasks-icon {\\n    width: 3rem;\\n    height: 3rem;\\n}\\n.projects-text, .tasks-text {\\n    font-size: 3.5rem;\\n}\\n.projects-section, .tasks-section{\\n    width: calc(100% - 6rem);\\n    margin-left: 3rem;\\n    margin-right: 3rem;\\n    /*background-color: green; */\\n    align-self: center;\\n}\\n.projects-section {\\n    margin-bottom: 30px;\\n}\\n\\n\\n/* Projecs Section */\\n.current {\\n    width: 100%;\\n    background-color: var(--white);\\n    display: flex;\\n    align-items: center;\\n    justify-content: start;\\n    flex-wrap: wrap;\\n    column-gap: 10px;\\n    row-gap: 3px;\\n    position: sticky;\\n    top: 8vh;\\n    z-index: 0;\\n    width: 100%;\\n    align-self: center;\\n    padding: 8px;\\n    padding-left: 3rem;\\n    padding-right: 3rem;\\n}\\n.settings-icon {\\n    width: 2rem;\\n    margin-left: auto;\\n}\\n.current-text, .my-projects {\\n    font-family: outfit-light;\\n    font-size: 2.2rem;\\n}\\n.project {\\n    height: min-content;\\n    font-size: 1.7rem;\\n    background-color: white;\\n    border-radius: 20px;\\n    padding: 2px;\\n    padding-left: 12px;\\n    padding-right: 12px;\\n    font-family: outfit-regular;\\n    color: var(--blue);\\n    border: 1.5px solid var(--blue);\\n}\\n.project.current-project {\\n    color: white;\\n    background-color: var(--blue);\\n\\n}\\n.current-project-container {\\n    display: flex;\\n    flex-direction: space-between;\\n    flex-grow: 1;\\n    align-items: center;\\n}\\n.projects {\\n    width: 100%;\\n    display: flex;\\n    flex-wrap: wrap;\\n    flex-direction: row;\\n    justify-content: start;\\n    row-gap: 8px;\\n    column-gap: 16px;\\n    padding-top: 8px;\\n    padding-bottom: 8px;\\n}\\n\\n/* Tasks Section */\\n.tasks-section {\\n    width: 100%;\\n    padding-top: 12px;\\n    display: flex;\\n    flex-direction: column;\\n    row-gap: 20px;\\n}\\n.day-section {\\n    width: 100%;\\n}\\n.day {\\n    font-size: 3rem;\\n    padding-left: 3rem;\\n    padding-right: 3rem;\\n    font-family: outfit-regular;\\n    border-bottom: 2px dotted var(--black);\\n}\\n.tasks {\\n    width: 100%;\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    padding: 8px;\\n    padding-top: 16px;\\n    flex-wrap: wrap;\\n    row-gap: 16px;\\n    column-gap: 16px;\\n    \\n}\\n/* Task Card */\\n.task {\\n    width: 120px;\\n    height: 150px;\\n    background-color: white;\\n    border-radius: 15px;\\n    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\\n}\\n\\n/* MODULARS */\\n/* Create Project */\\n.create-project-modular {\\n    width: 100%;\\n    height: 100%;\\n    background-color: #26262670;\\n    position: fixed;\\n    top: 0;\\n    z-index: 2;\\n    display: flex;\\n    justify-content: center;\\n    align-items: center;\\n    visibility: hidden;\\n}\\n.create-project-form {\\n    width: min(80%, 400px);\\n    height: min(40%, 400px);\\n    background-color: var(--white);\\n    border-radius: 20px;\\n    position: relative;\\n    bottom: 5vh;\\n    display: flex;\\n    flex-direction: column;\\n    padding: 10px;\\n}\\n.form-text {\\n    font-size: 3rem;\\n    font-family: outfit-regular;\\n    text-align: center;\\n    margin-top: 15px;\\n}\\n.create-project-form label {\\n    font-size: 2.5rem;\\n    font-family: outfit-light;\\n    margin-top: 25px;\\n    padding-left: 5%;\\n}\\n.close-icon {\\n    width: 4rem;\\n    height: 4rem;\\n    align-self: end;\\n}\\n.close-icon:hover {\\n    cursor: pointer;\\n}\\n#project-name-input {\\n    width: 90%;\\n    margin-top: 10px;\\n    appearance: none;\\n    height: 4.5rem;\\n    font-size: 2rem;\\n    border-radius: 10px;\\n    border: 2px solid var(--grayMedium);\\n    padding-left: 10px;\\n    padding-right: 10px;\\n    align-self: center;\\n}\\n#project-name-input:focus {\\n    outline: none;\\n    box-shadow: 0 0 0 1px var(--blue);\\n    border-color: var(--blue);\\n}\\n#new-project-buttons {\\n    align-self: center;\\n    margin-top: 35px;\\n    width: 100%;\\n    display: flex;\\n    justify-content: center;\\n    gap: 5px;\\n}\\n#new-project-buttons button {\\n    width: 35%;\\n    height: 4rem;\\n    background-color: var(--grayDark);\\n    border-radius: 10px;\\n    color: white;\\n    font-family: outfit-regular;\\n    font-size: 2rem;\\n    border: 0;\\n}\\n\\n.visible {\\n    visibility: visible;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-do-app/./src/styles.css?./node_modules/css-loader/dist/cjs.js");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://to-do-app/./node_modules/css-loader/dist/runtime/api.js?");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url.default : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://to-do-app/./node_modules/css-loader/dist/runtime/getUrl.js?");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
-  \**************************************************************/
-/***/ ((module) => {
-
-eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://to-do-app/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
-
-/***/ }),
-
-/***/ "./src/styles.css":
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ \"./node_modules/style-loader/dist/runtime/styleDomAPI.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ \"./node_modules/style-loader/dist/runtime/insertBySelector.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ \"./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ \"./node_modules/style-loader/dist/runtime/insertStyleElement.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ \"./node_modules/style-loader/dist/runtime/styleTagTransform.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles.css\");\n\n      \n      \n      \n      \n      \n      \n      \n      \n      \n\nvar options = {};\n\noptions.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());\noptions.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());\n\n      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, \"head\");\n    \noptions.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());\noptions.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"], options);\n\n\n\n\n       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"] && _node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals ? _node_modules_css_loader_dist_cjs_js_styles_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals : undefined);\n\n\n//# sourceURL=webpack://to-do-app/./src/styles.css?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module) => {
-
-eval("\n\nvar stylesInDOM = [];\n\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n\n  for (var i = 0; i < stylesInDOM.length; i++) {\n    if (stylesInDOM[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n\n  return result;\n}\n\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var indexByIdentifier = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3],\n      supports: item[4],\n      layer: item[5]\n    };\n\n    if (indexByIdentifier !== -1) {\n      stylesInDOM[indexByIdentifier].references++;\n      stylesInDOM[indexByIdentifier].updater(obj);\n    } else {\n      var updater = addElementStyle(obj, options);\n      options.byIndex = i;\n      stylesInDOM.splice(i, 0, {\n        identifier: identifier,\n        updater: updater,\n        references: 1\n      });\n    }\n\n    identifiers.push(identifier);\n  }\n\n  return identifiers;\n}\n\nfunction addElementStyle(obj, options) {\n  var api = options.domAPI(options);\n  api.update(obj);\n\n  var updater = function updater(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {\n        return;\n      }\n\n      api.update(obj = newObj);\n    } else {\n      api.remove();\n    }\n  };\n\n  return updater;\n}\n\nmodule.exports = function (list, options) {\n  options = options || {};\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDOM[index].references--;\n    }\n\n    var newLastIdentifiers = modulesToDom(newList, options);\n\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n\n      var _index = getIndexByIdentifier(_identifier);\n\n      if (stylesInDOM[_index].references === 0) {\n        stylesInDOM[_index].updater();\n\n        stylesInDOM.splice(_index, 1);\n      }\n    }\n\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
-  \********************************************************************/
-/***/ ((module) => {
-
-eval("\n\nvar memo = {};\n/* istanbul ignore next  */\n\nfunction getTarget(target) {\n  if (typeof memo[target] === \"undefined\") {\n    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n      try {\n        // This will throw an exception if access to iframe is blocked\n        // due to cross-origin restrictions\n        styleTarget = styleTarget.contentDocument.head;\n      } catch (e) {\n        // istanbul ignore next\n        styleTarget = null;\n      }\n    }\n\n    memo[target] = styleTarget;\n  }\n\n  return memo[target];\n}\n/* istanbul ignore next  */\n\n\nfunction insertBySelector(insert, style) {\n  var target = getTarget(insert);\n\n  if (!target) {\n    throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n  }\n\n  target.appendChild(style);\n}\n\nmodule.exports = insertBySelector;\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/insertBySelector.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction insertStyleElement(options) {\n  var element = document.createElement(\"style\");\n  options.setAttributes(element, options.attributes);\n  options.insert(element, options.options);\n  return element;\n}\n\nmodule.exports = insertStyleElement;\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/insertStyleElement.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
-  \**********************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction setAttributesWithoutAttributes(styleElement) {\n  var nonce =  true ? __webpack_require__.nc : 0;\n\n  if (nonce) {\n    styleElement.setAttribute(\"nonce\", nonce);\n  }\n}\n\nmodule.exports = setAttributesWithoutAttributes;\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
-  \***************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj) {\n  var css = \"\";\n\n  if (obj.supports) {\n    css += \"@supports (\".concat(obj.supports, \") {\");\n  }\n\n  if (obj.media) {\n    css += \"@media \".concat(obj.media, \" {\");\n  }\n\n  var needLayer = typeof obj.layer !== \"undefined\";\n\n  if (needLayer) {\n    css += \"@layer\".concat(obj.layer.length > 0 ? \" \".concat(obj.layer) : \"\", \" {\");\n  }\n\n  css += obj.css;\n\n  if (needLayer) {\n    css += \"}\";\n  }\n\n  if (obj.media) {\n    css += \"}\";\n  }\n\n  if (obj.supports) {\n    css += \"}\";\n  }\n\n  var sourceMap = obj.sourceMap;\n\n  if (sourceMap && typeof btoa !== \"undefined\") {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  options.styleTagTransform(css, styleElement, options.options);\n}\n\nfunction removeStyleElement(styleElement) {\n  // istanbul ignore if\n  if (styleElement.parentNode === null) {\n    return false;\n  }\n\n  styleElement.parentNode.removeChild(styleElement);\n}\n/* istanbul ignore next  */\n\n\nfunction domAPI(options) {\n  var styleElement = options.insertStyleElement(options);\n  return {\n    update: function update(obj) {\n      apply(styleElement, options, obj);\n    },\n    remove: function remove() {\n      removeStyleElement(styleElement);\n    }\n  };\n}\n\nmodule.exports = domAPI;\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/styleDomAPI.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\n\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://to-do-app/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
-
-/***/ }),
-
 /***/ "./src/Project.js":
 /*!************************!*\
   !*** ./src/Project.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Project)\n/* harmony export */ });\nclass Project {\n    name;\n    tasks;\n    current=false;\n    constructor(name) {\n        this.name = name;\n    }\n};\n\n//# sourceURL=webpack://to-do-app/./src/Project.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Project)\n/* harmony export */ });\nclass Project {\n\n  name;\n  tasks;\n  constructor(name) {\n    this.name = name;\n    Project.projects.push(this);\n  }\n\n  static projects = [];\n  static currentProjectIndex;\n  static storeLocal() {\n    localStorage.setItem(\"projects\", JSON.stringify(Project.projects));\n    localStorage.setItem(\"currentIndex\", JSON.stringify(Project.currentProjectIndex));\n  }\n  static renderProjects() {\n\n    const projectsSection = document.querySelector(\".projects\");\n    projectsSection.textContent = \"\";\n    \n    if(Project.projects.length === 0) {\n      console.log(\"hey\");\n      const noProjects = document.createElement(\"div\");\n      noProjects.classList.add(\"no-existing-projects\")\n      noProjects.textContent = \"Empty...\"\n      projectsSection.appendChild(noProjects);\n    }\n\n    // modifies current container depending on whether we have or not \n    // a current project selected\n    const currentBlock = document.querySelector(\"#current-block\");\n    const settingsIcon = document.querySelector(\".settings-icon\");\n    if(Project.currentProjectIndex !== -1) {\n      currentBlock.textContent = Project.projects[Project.currentProjectIndex].name;\n      currentBlock.classList.remove(\"no-project-selected\");\n      currentBlock.classList.add(\"current-project\", \"project\");\n      settingsIcon.style.visibility = \"visible\";    \n    } else {\n      currentBlock.textContent = \"No project selected\";\n      currentBlock.classList.remove(\"current-project\", \"project\");\n      currentBlock.classList.add(\"no-project-selected\");\n      settingsIcon.style.visibility = \"hidden\";\n    }\n\n    for (const currentProject of Project.projects) {\n      const project = document.createElement(\"div\");\n      project.classList.add(\"project\");\n      project.textContent = currentProject.name;\n      project.addEventListener(\"click\", (event) => {\n        localStorage.setItem(\"active\", \"true\");\n        let i = 0;\n        for (const current of Project.projects) {\n          if (current.name === event.target.textContent) {\n            break;\n          }\n          i += 1;\n        }\n        Project.currentProjectIndex = i;\n        Project.storeLocal();\n        Project.renderProjects();\n      });\n      \n      // we check if we have a project selected\n      // if we do, we highlight it\n      if(Project.currentProjectIndex !== -1) {\n        if (currentProject.name === Project.projects[Project.currentProjectIndex].name) {\n          project.classList.add(\"current-project\");\n        } \n      }\n      projectsSection.appendChild(project);\n    }\n\n  }\n\n\n  static deleteProject(currentIndex) {\n    Project.projects.splice(currentIndex, 1);\n    Project.currentProjectIndex = -1;\n    Project.storeLocal();\n  }\n\n\n  static renderInitial() {\n    if (localStorage.active === undefined) {\n      Project.#initializeDefault();\n      Project.renderProjects();\n    } else {\n      Project.projects = [...JSON.parse(localStorage.getItem(\"projects\"))];\n      Project.currentProjectIndex = JSON.parse(localStorage.getItem(\"currentIndex\"));\n      Project.renderProjects();\n    }\n  }\n\n\n  static #initializeDefault() {\n    /* eslint-disable no-new */\n    new Project(\"Default Project\");\n    Project.currentProjectIndex = 0;\n    new Project(\"Default Project 2\");\n    new Project(\"Important Project\");\n    Project.storeLocal();\n  }\n}\n\n\n//# sourceURL=webpack://to-do-app/./src/Project.js?");
+
+/***/ }),
+
+/***/ "./src/editProjectModular.js":
+/*!***********************************!*\
+  !*** ./src/editProjectModular.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ editProjectModal)\n/* harmony export */ });\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n\n\nfunction editProjectModal() {\n\n    const editProjectModal = document.querySelector(\".edit-project-modal\");\n  \n    /* the form control */\n    const inputEditProjectName = document.querySelector(\"#project-edit-input\");\n\n    // stop propagation\n    const editProjectForm = document.querySelector(\".edit-project-form\");\n    editProjectForm.addEventListener(\"click\", (event) => {\n      event.stopPropagation();\n    });\n  \n    /* Open */\n    const editProjectIcon = document.querySelector(\".settings-icon\");\n    editProjectIcon.addEventListener(\"click\", () => {\n      editProjectModal.classList.add(\"visible\");\n      inputEditProjectName.value = \"\";\n      inputEditProjectName.value = _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].projects[_Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].currentProjectIndex].name;\n      editProjectForm.classList.add(\"active\");\n    });\n\n    /* Close */ \n  \n    function closeEditProjectModal() {\n      editProjectModal.classList.remove(\"visible\");\n      editProjectForm.classList.remove(\"active\");\n    }\n  \n    editProjectModal.addEventListener(\"click\", closeEditProjectModal);\n  \n    const closeEditProjectIcon = document.querySelector(\".close-edit-project-icon\");\n    closeEditProjectIcon.addEventListener(\"click\", closeEditProjectModal);\n  \n    const cancelEditProjectBtn = document.querySelector(\"#cancel-edit-btn\");\n    cancelEditProjectBtn.addEventListener(\"click\", closeEditProjectModal);\n    \n\n\n    /* EDIT CURRENT PROJECT FUNCTIONALITY */\n    let invalid = false;\n    const errorEditProject = document.querySelector('.error-edit');\n    inputEditProjectName.addEventListener('input', (event)=>{\n        invalid = false;\n        errorEditProject.textContent = \"\";\n        for(const current of _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].projects) {\n            if(current.name === _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].projects[_Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].currentProjectIndex].name) {\n                // eslint-disable-next-line no-continue\n                continue;\n            }\n            if(current.name === event.target.value) {\n                errorEditProject.textContent = \"Project already exists!\";\n                invalid = true;\n                break;\n            }\n        }\n        const regex = /^\\s+$/;\n        if(regex.test(event.target.value) === true) {\n            errorEditProject.textContent = \"Invalid project name!\";\n            invalid = true;\n        }\n      })\n    const saveEditBtn = document.querySelector(\"#save-edit-btn\");\n    saveEditBtn.addEventListener('click', (event) => {\n        event.preventDefault();\n        if(inputEditProjectName.reportValidity() === true && invalid === false) {\n            _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].projects[_Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].currentProjectIndex].name = inputEditProjectName.value;\n            _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].storeLocal();\n            _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].renderProjects();\n            closeEditProjectModal();\n        }\n\n    })\n\n    /* DELETE CURRENT PROJECT FUNCTIONALITY */\n    \n    const deleteProjectBtn = document.querySelector(\"#delete-project-btn\");\n    deleteProjectBtn.addEventListener(\"click\", (event=> {\n        event.preventDefault();\n        _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].deleteProject(_Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].currentProjectIndex);\n        _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].renderProjects();\n        closeEditProjectModal();\n    }))\n    \n}\n\n//# sourceURL=webpack://to-do-app/./src/editProjectModular.js?");
 
 /***/ }),
 
@@ -136,37 +36,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n\n\n\nfunction createProjectComponent(project) {\n  const projectComponent = document.createElement(\"div\");\n  projectComponent.classList.add(\"project\");\n  projectComponent.textContent = project.name;\n  projectComponent.addEventListener(\"click\", () => {\n    const selectedName = project.name;\n    let i = 0;\n    for (const currentProject of projectsArray) {\n      if (currentProject.name === selectedName) {\n        break;\n      }\n      i++;\n    }\n    setCurrentProject(i);\n    renderProjects(projectsArray);\n  });\n  return projectComponent;\n}\nconst projectsSection = document.querySelector(\".projects\");\n/* Projects Array */\nconst projectsArray = [\n  new _Project__WEBPACK_IMPORTED_MODULE_1__[\"default\"](\"Default Project\"),\n  new _Project__WEBPACK_IMPORTED_MODULE_1__[\"default\"](\"Default Project 2\"),\n  new _Project__WEBPACK_IMPORTED_MODULE_1__[\"default\"](\"Important Project\"),\n];\n/* RENDER PROJECTS */\nfunction renderProjects(projectsArray) {\n  projectsSection.textContent = \"\";\n  for (const currentProject of projectsArray) {\n    const project = createProjectComponent(currentProject);\n    if (currentProject.current === true) {\n      project.classList.add(\"current-project\");\n    }\n    projectsSection.appendChild(project);\n  }\n}\nrenderProjects(projectsArray);\n/* CURRENT FUNCTIONALITY */\nlet currentProject = 0;\nconst currentProjectElement = document.querySelector(\"#current-block\");\nfunction setCurrentProject(newCurrent) {\n  currentProjectElement.textContent = projectsArray[newCurrent].name;\n  projectsArray[currentProject].current = false;\n  projectsArray[newCurrent].current = true;\n  currentProject = newCurrent;\n}\nsetCurrentProject(0);\nrenderProjects(projectsArray);\nsetCurrentProject(1);\nrenderProjects(projectsArray);\n/* CREATE NEW PROJECT FUNCTIONALITY */\nconst newProjectModular = document.querySelector(\".create-project-modular\");\n\n/* Open */\nconst createNewProjectIcon = document.querySelector(\".create-project\");\ncreateNewProjectIcon.addEventListener(\"click\", () => {\n  newProjectModular.classList.add(\"visible\");\n});\n\n/* Close */\nfunction closeNewProjectModular() {\n  newProjectModular.classList.remove(\"visible\");\n}\n\nnewProjectModular.addEventListener(\"click\", closeNewProjectModular);\n\nconst closeNewProjectIcon = document.querySelector(\"#close-new-project-icon\");\ncloseNewProjectIcon.addEventListener(\"click\", closeNewProjectModular);\n\nconst cancelNewProjectBtn = document.querySelector(\"#cancel-new-btn\");\ncancelNewProjectBtn.addEventListener(\"click\", closeNewProjectModular);\n\n// stop propagation\nconst newProjectForm = document.querySelector(\".create-project-form\");\nnewProjectForm.addEventListener(\"click\", (event) => {\n  event.stopPropagation();\n});\n\n/* Create */\nconst inputNewProjectName = document.querySelector(\"#project-name-input\");\nconst createNewProjectBtn = document.querySelector(\"#create-new-btn\");\ncreateNewProjectBtn.addEventListener(\"click\", (event) => {\n  event.preventDefault();\n  if (inputNewProjectName.reportValidity() === true) {\n    projectsArray.push(new _Project__WEBPACK_IMPORTED_MODULE_1__[\"default\"](inputNewProjectName.value));\n    renderProjects(projectsArray);\n    newProjectModular.classList.remove(\"visible\");\n  }\n});\n\n\n//# sourceURL=webpack://to-do-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n/* harmony import */ var _newProjectModular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newProjectModular */ \"./src/newProjectModular.js\");\n/* harmony import */ var _editProjectModular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editProjectModular */ \"./src/editProjectModular.js\");\n\n\n\n\n\n_Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].renderInitial();\n(0,_newProjectModular__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_editProjectModular__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n\n//# sourceURL=webpack://to-do-app/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/fonts/Outfit-Bold.ttf":
-/*!***********************************!*\
-  !*** ./src/fonts/Outfit-Bold.ttf ***!
-  \***********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "./src/newProjectModular.js":
+/*!**********************************!*\
+  !*** ./src/newProjectModular.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"958af3eb04f5d52fff1d.ttf\";\n\n//# sourceURL=webpack://to-do-app/./src/fonts/Outfit-Bold.ttf?");
-
-/***/ }),
-
-/***/ "./src/fonts/Outfit-Light.ttf":
-/*!************************************!*\
-  !*** ./src/fonts/Outfit-Light.ttf ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"8e4b89aa385da8f1058e.ttf\";\n\n//# sourceURL=webpack://to-do-app/./src/fonts/Outfit-Light.ttf?");
-
-/***/ }),
-
-/***/ "./src/fonts/Outfit-Regular.ttf":
-/*!**************************************!*\
-  !*** ./src/fonts/Outfit-Regular.ttf ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"5a00cf1a6ae3ea70fb96.ttf\";\n\n//# sourceURL=webpack://to-do-app/./src/fonts/Outfit-Regular.ttf?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newProjectModal)\n/* harmony export */ });\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n\n\nfunction newProjectModal() {\n\n  /* CREATE NEW PROJECT FUNCTIONALITY */\n  const newProjectModal = document.querySelector(\".create-project-modal\");\n\n  /* the form control */\n  const inputNewProjectName = document.querySelector(\"#project-name-input\");\n\n  /* Open */\n  const createNewProjectIcon = document.querySelector(\".create-project\");\n  const newProjectForm = document.querySelector(\".create-project-form\");\n  createNewProjectIcon.addEventListener(\"click\", () => {\n    newProjectModal.classList.add(\"visible\");\n    inputNewProjectName.value = \"\";\n    newProjectForm.classList.add(\"active\");\n  });\n\n  // stop propagation\n  newProjectForm.addEventListener(\"click\", (event) => {\n    event.stopPropagation();\n  });\n\n  /* Close */\n  let invalid = false;\n  const errorNewProject = document.querySelector('.error');\n\n  function closeNewProjectModal() {\n    newProjectModal.classList.remove(\"visible\");\n    newProjectForm.classList.remove(\"active\");\n    invalid = false;\n    errorNewProject.textContent = \"\";\n\n  }\n\n  newProjectModal.addEventListener(\"click\", closeNewProjectModal);\n\n  const closeNewProjectIcon = document.querySelector(\".close-new-project-icon\");\n  closeNewProjectIcon.addEventListener(\"click\", closeNewProjectModal);\n\n  const cancelNewProjectBtn = document.querySelector(\"#cancel-new-btn\");\n  cancelNewProjectBtn.addEventListener(\"click\", closeNewProjectModal);\n\n\n\n  /* Create */\n  \n  \n  inputNewProjectName.addEventListener('input', (event)=>{\n    invalid = false;\n    errorNewProject.textContent = \"\";\n    for(const current of _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].projects) {\n        if(current.name === event.target.value) {\n            errorNewProject.textContent = \"Project already exists!\";\n            invalid = true;\n            break;\n        }\n    }\n    const regex = /^\\s+$/;\n    if(regex.test(event.target.value) === true) {\n        errorNewProject.textContent = \"Invalid project name!\";\n        invalid = true;\n    }\n  })\n  const createNewProjectBtn = document.querySelector(\"#create-new-btn\");\n  createNewProjectBtn.addEventListener(\"click\", (event) => {\n    event.preventDefault();\n    if (inputNewProjectName.reportValidity() === true && invalid === false) {\n      /* eslint-disable no-new */\n      new _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"](inputNewProjectName.value);\n      _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].storeLocal();\n      localStorage.setItem(\"active\", \"true\");\n      _Project__WEBPACK_IMPORTED_MODULE_0__[\"default\"].renderProjects();\n      closeNewProjectModal();\n    }\n  });\n}\n\n\n//# sourceURL=webpack://to-do-app/./src/newProjectModular.js?");
 
 /***/ })
 
@@ -184,7 +64,7 @@ eval("module.exports = __webpack_require__.p + \"5a00cf1a6ae3ea70fb96.ttf\";\n\n
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
+/******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -196,22 +76,7 @@ eval("module.exports = __webpack_require__.p + \"5a00cf1a6ae3ea70fb96.ttf\";\n\n
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -222,18 +87,6 @@ eval("module.exports = __webpack_require__.p + \"5a00cf1a6ae3ea70fb96.ttf\";\n\n
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -250,57 +103,6 @@ eval("module.exports = __webpack_require__.p + \"5a00cf1a6ae3ea70fb96.ttf\";\n\n
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"main": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

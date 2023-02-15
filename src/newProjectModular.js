@@ -1,43 +1,48 @@
 import Project from "./Project";
 
-export default function newProjectModular() {
+export default function newProjectModal() {
 
   /* CREATE NEW PROJECT FUNCTIONALITY */
-  const newProjectModular = document.querySelector(".create-project-modular");
+  const newProjectModal = document.querySelector(".create-project-modal");
 
   /* the form control */
   const inputNewProjectName = document.querySelector("#project-name-input");
 
   /* Open */
   const createNewProjectIcon = document.querySelector(".create-project");
+  const newProjectForm = document.querySelector(".create-project-form");
   createNewProjectIcon.addEventListener("click", () => {
-    newProjectModular.classList.add("visible");
+    newProjectModal.classList.add("visible");
     inputNewProjectName.value = "";
+    newProjectForm.classList.add("active");
+  });
+
+  // stop propagation
+  newProjectForm.addEventListener("click", (event) => {
+    event.stopPropagation();
   });
 
   /* Close */
   let invalid = false;
   const errorNewProject = document.querySelector('.error');
 
-  function closeNewProjectModular() {
-    newProjectModular.classList.remove("visible");
+  function closeNewProjectModal() {
+    newProjectModal.classList.remove("visible");
+    newProjectForm.classList.remove("active");
     invalid = false;
     errorNewProject.textContent = "";
+
   }
 
-  newProjectModular.addEventListener("click", closeNewProjectModular);
+  newProjectModal.addEventListener("click", closeNewProjectModal);
 
   const closeNewProjectIcon = document.querySelector(".close-new-project-icon");
-  closeNewProjectIcon.addEventListener("click", closeNewProjectModular);
+  closeNewProjectIcon.addEventListener("click", closeNewProjectModal);
 
   const cancelNewProjectBtn = document.querySelector("#cancel-new-btn");
-  cancelNewProjectBtn.addEventListener("click", closeNewProjectModular);
+  cancelNewProjectBtn.addEventListener("click", closeNewProjectModal);
 
-  // stop propagation
-  const newProjectForm = document.querySelector(".create-project-form");
-  newProjectForm.addEventListener("click", (event) => {
-    event.stopPropagation();
-  });
+
 
   /* Create */
   
@@ -67,7 +72,7 @@ export default function newProjectModular() {
       Project.storeLocal();
       localStorage.setItem("active", "true");
       Project.renderProjects();
-      newProjectModular.classList.remove("visible");
+      closeNewProjectModal();
     }
   });
 }
