@@ -153,6 +153,27 @@
             <button id="delete-project-btn" class="red-btn">DELETE PROJECT</button>
         </form>
     </div>
+    <!--Add Task-->
+    <div class="add-task-modal">
+        <form class="add-task-form">
+            <div class="close-icon close-add-task-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close-box</title><path d="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z" /></svg>
+            </div>
+            <div class="form-text">Add a new task</div>
+            <label for="task-description">Task Description</label>
+            <textarea id="task-description" rows="2" cols="10" maxlength="36"></textarea>
+            <label for="task-deadline" class="deadline-label">Deadline</label>
+            <input type="date" id="task-deadline" name="taskDeadline">
+            <div class="no-deadline-container">
+                <input type="checkbox" id="no-deadline" name="noDeadline" value="true" class="task-checkbox">
+                <label for="no-deadline">No deadline</label>
+            </div>
+            <div class="buttons buttons-add-task">
+                <button id="add-btn" class="blue-btn" type="submit">ADD</button>
+                <button id="cancel-add-btn" type="button">CANCEL</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
 
