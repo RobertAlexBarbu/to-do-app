@@ -1,9 +1,11 @@
 
 import Project from "./Project";
-import newProjectModular from "./newProjectModular";
-import editProjectModular from "./editProjectModular";
+import newProjectModal from "./newProjectModal";
+import editProjectModal from "./editProjectModal";
+import addTaskModal from "./addTaskModal";
 
 Project.renderInitial();
-newProjectModular();
-editProjectModular();
+newProjectModal();
+editProjectModal();
+addTaskModal();
 
