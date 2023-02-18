@@ -1,6 +1,5 @@
-import {parseISO, getTime, getDate, getMonth} from "date-fns";
+import { parseISO, getTime, getDate, getMonth } from "date-fns";
 import Task from "./Task";
-
 
 export default class Project {
   name;
@@ -102,56 +101,170 @@ export default class Project {
           // mark current project
           project.classList.add("current-project");
           // generate the tasks of the current project
-          const TEST = document.querySelector(".tasks");
-          TEST.textContent = "";
+          const tasksSection = document.querySelector(".tasks-section");
+          tasksSection.textContent = "";
           // SORT TASKS BY DEADLINE
           console.log(currentProject.getTasks());
-          currentProject.getTasks().sort((task1, task2)=>{
+          currentProject.getTasks().sort((task1, task2) => {
             let deadline1 = task1.getDeadline().getTime();
             let deadline2 = task2.getDeadline().getTime();
-            if(isNaN(deadline1) === true) {
+            if (isNaN(deadline1) === true) {
               deadline1 = Infinity;
             }
-            if(isNaN(deadline2) === true) {
+            if (isNaN(deadline2) === true) {
               deadline2 = Infinity;
             }
-            if(deadline1 > deadline2) {
+            if (deadline1 > deadline2) {
               return 1;
-            } else if(deadline1 < deadline2) {
+            } else if (deadline1 < deadline2) {
               return -1;
             } else {
               return 0;
             }
           });
           console.log(currentProject.getTasks());
+          const renderedDates = [];
+          function stringifyDate(month, day) {
+            let stringDate = "";
+            switch (month) {
+              case 0:
+                stringDate += "January ";
+                break;
+              case 1:
+                stringDate += "February ";
+                break;
+              case 2:
+                stringDate += "March ";
+                break;
+              case 3:
+                stringDate += "April ";
+                break;
+            }
+            if (isNaN(month) === true) {
+              stringDate += "No Deadline";
+            }
+            if (isNaN(day) === false) {
+              stringDate += day;
+            }
+            return stringDate;
+          }
+          /* RENDER TASKS */
           for (const currentTask of currentProject.getTasks()) {
-            console.log(currentTask.getDeadline().getMonth(), currentTask.getDeadline().getDate());
-            const task = document.createElement("div");
-            task.classList.add("task");
+            console.log(
+              stringifyDate(
+                currentTask.getDeadline().getMonth(),
+                currentTask.getDeadline().getDate()
+              )
+            );
 
-            const taskDetails = document.createElement("div");
-            taskDetails.classList.add("task-details");
+            const currentDeadline = stringifyDate(
+              currentTask.getDeadline().getMonth(),
+              currentTask.getDeadline().getDate()
+            );
+            /* render fist day section */
+            if (renderedDates[0] === undefined) {
+              renderedDates.push(currentDeadline);
 
-            const taskCheckbox = document.createElement("input");
-            taskCheckbox.setAttribute("type", "checkbox");
-            taskCheckbox.classList.add("task-checkbox");
+              const daySection = document.createElement("div");
+              daySection.classList.add("day-section");
 
-            const taskName = document.createElement("div");
-            taskName.classList.add("task-name");
-            taskName.textContent = currentTask.getDescription();
+              const day = document.createElement("div");
+              day.classList.add("day");
+              day.textContent = currentDeadline;
+              daySection.appendChild(day);
 
-            const editTaskIcon = document.createElement("div");
-            editTaskIcon.classList.add("edit-task-icon");
-            editTaskIcon.innerHTML =
-              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-edit-outline</title><path d="M10 20H6V4H13V9H18V12.1L20 10.1V8L14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20M20.2 13C20.3 13 20.5 13.1 20.6 13.2L21.9 14.5C22.1 14.7 22.1 15.1 21.9 15.3L20.9 16.3L18.8 14.2L19.8 13.2C19.9 13.1 20 13 20.2 13M20.2 16.9L14.1 23H12V20.9L18.1 14.8L20.2 16.9Z" /></svg>';
+              const tasks = document.createElement("div");
+              tasks.classList.add("tasks");
+              /* Render tasks with the same deadline */
+              for (const taskNow of currentProject.getTasks()) {
+                const taskDate = stringifyDate(
+                  taskNow.getDeadline().getMonth(),
+                  taskNow.getDeadline().getDate()
+                );
+                if (taskDate === currentDeadline) {
+                  const newTask = document.createElement("div");
+                  newTask.classList.add("task");
 
-            taskDetails.appendChild(taskCheckbox);
-            taskDetails.appendChild(taskName);
-            taskDetails.appendChild(editTaskIcon);
+                  const taskDetails = document.createElement("div");
+                  taskDetails.classList.add("task-details");
 
-            task.appendChild(taskDetails);
+                  const taskCheckbox = document.createElement("input");
+                  taskCheckbox.setAttribute("type", "checkbox");
+                  taskCheckbox.classList.add("task-checkbox");
 
-            TEST.appendChild(task);
+                  const taskName = document.createElement("div");
+                  taskName.classList.add("task-name");
+                  taskName.textContent = taskNow.getDescription();
+
+                  const editTaskIcon = document.createElement("div");
+                  editTaskIcon.classList.add("edit-task-icon");
+                  editTaskIcon.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-edit-outline</title><path d="M10 20H6V4H13V9H18V12.1L20 10.1V8L14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20M20.2 13C20.3 13 20.5 13.1 20.6 13.2L21.9 14.5C22.1 14.7 22.1 15.1 21.9 15.3L20.9 16.3L18.8 14.2L19.8 13.2C19.9 13.1 20 13 20.2 13M20.2 16.9L14.1 23H12V20.9L18.1 14.8L20.2 16.9Z" /></svg>';
+      
+                  taskDetails.appendChild(taskCheckbox);
+                  taskDetails.appendChild(taskName);
+                  taskDetails.appendChild(editTaskIcon);
+
+                  newTask.appendChild(taskDetails);
+                  tasks.appendChild(newTask);
+
+                }
+              }
+              daySection.appendChild(tasks);
+              tasksSection.appendChild(daySection);
+            } else if (
+              /* Render next different Task section */
+              renderedDates.findIndex((element) => {
+                if (element === currentDeadline) {
+                  return true;
+                }
+              }) < 0
+            ) {
+              renderedDates.push(currentDeadline);
+              const daySection = document.createElement("div");
+              daySection.classList.add("day-section");
+              const day = document.createElement("div");
+              day.classList.add("day");
+              day.textContent = currentDeadline;
+              daySection.appendChild(day);
+              const tasks = document.createElement("div");
+              tasks.classList.add("tasks");
+              for (const taskNow of currentProject.getTasks()) {
+                const taskDate = stringifyDate(
+                  taskNow.getDeadline().getMonth(),
+                  taskNow.getDeadline().getDate()
+                );
+                if (taskDate === currentDeadline) {
+                  const newTask = document.createElement("div");
+                  newTask.classList.add("task");
+                  const taskDetails = document.createElement("div");
+                  taskDetails.classList.add("task-details");
+
+                  const taskCheckbox = document.createElement("input");
+                  taskCheckbox.setAttribute("type", "checkbox");
+                  taskCheckbox.classList.add("task-checkbox");
+
+                  const taskName = document.createElement("div");
+                  taskName.classList.add("task-name");
+                  taskName.textContent = taskNow.getDescription();
+
+                  const editTaskIcon = document.createElement("div");
+                  editTaskIcon.classList.add("edit-task-icon");
+                  editTaskIcon.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-edit-outline</title><path d="M10 20H6V4H13V9H18V12.1L20 10.1V8L14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20M20.2 13C20.3 13 20.5 13.1 20.6 13.2L21.9 14.5C22.1 14.7 22.1 15.1 21.9 15.3L20.9 16.3L18.8 14.2L19.8 13.2C19.9 13.1 20 13 20.2 13M20.2 16.9L14.1 23H12V20.9L18.1 14.8L20.2 16.9Z" /></svg>';
+      
+                  taskDetails.appendChild(taskCheckbox);
+                  taskDetails.appendChild(taskName);
+                  taskDetails.appendChild(editTaskIcon);
+
+                  newTask.appendChild(taskDetails);
+                  tasks.appendChild(newTask);
+                }
+              }
+              daySection.appendChild(tasks);
+              tasksSection.appendChild(daySection);
+            }
+
           }
         }
       }
