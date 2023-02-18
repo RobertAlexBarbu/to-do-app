@@ -3,6 +3,7 @@ import Project from "./Project";
 export default function newProjectModal() {
 
   /* CREATE NEW PROJECT FUNCTIONALITY */
+  /* the modal */
   const newProjectModal = document.querySelector(".create-project-modal");
 
   /* the form control */
@@ -67,8 +68,8 @@ export default function newProjectModal() {
   createNewProjectBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (inputNewProjectName.reportValidity() === true && invalid === false) {
-      /* eslint-disable no-new */
-      new Project(inputNewProjectName.value);
+      const project = new Project(inputNewProjectName.value);
+      Project.addProject(project);
       Project.storeLocal();
       localStorage.setItem("active", "true");
       Project.renderProjects();

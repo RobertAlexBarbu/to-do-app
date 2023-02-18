@@ -10,6 +10,7 @@ module.exports = {
     devServer: {
         static: 'dist',
     },
+    devtool: 'inline-soruce-map',
     mode: 'development',
     module: {
         rules: [

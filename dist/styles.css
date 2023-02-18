@@ -306,6 +306,7 @@ body {
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    display: flex;
 }
 .visible {
     visibility: visible;
@@ -442,24 +443,7 @@ textarea {
     margin-top: 0px;
     margin-left: 10px;
 
-}/*
-#no-deadline {
-    appearance: none;
-    margin: 0px;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid var(--grayMedium);
-    border-radius: 20px;
-    background-color: var(--intenseWhite);
-    position: relative;
 }
-
-#no-deadline:checked {
-    background-color: var(--blue);
-    border-color: var(--blue);
-    background-clip: content-box;
-    padding: 4px;
-}*/
 .buttons-add-task {
     margin-top: auto;
 }
