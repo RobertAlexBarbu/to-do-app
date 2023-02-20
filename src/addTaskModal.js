@@ -27,6 +27,7 @@ export default function addTaskModal() {
       noDeadlineCheck.checked = false;
       inputDeadline.value = "";
       errorTaskDescription.textContent = "";
+      inputDeadline.removeAttribute("disabled");
     });
 
     /* Close */ 
