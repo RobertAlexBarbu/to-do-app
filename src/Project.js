@@ -64,7 +64,7 @@ export default class Project {
       const project = new Project(current.name);
       for (const currentTask of current.tasks) {
         project.addTask(
-          new Task(currentTask.taskDescription, currentTask.taskDeadline)
+          new Task(currentTask.taskDescription, currentTask.taskDeadline, currentTask.checked)
         );
       }
       Project.addProject(project);
@@ -199,7 +199,7 @@ export default class Project {
             getDate(taskNow.getDeadline())
           );
           if (taskDate === currentDeadline) {
-            tasks.appendChild(taskNow.taskComponent());
+            tasks.appendChild(Project.renderTaskHelper(taskNow));
           }
         }
         daySection.appendChild(tasks);
@@ -228,12 +228,26 @@ export default class Project {
             getDate(taskNow.getDeadline())
           );
           if (taskDate === currentDeadline) {
-            tasks.appendChild(taskNow.taskComponent());
+            tasks.appendChild(Project.renderTaskHelper(taskNow));
           }
         }
         daySection.appendChild(tasks);
         tasksSection.appendChild(daySection);
       }
     }
+  }
+  static renderTaskHelper(task) {
+    const taskComponent = task.taskComponent();
+    const checkbox = taskComponent.querySelector(".task-checkbox"); 
+    checkbox.addEventListener("click", (event)=>{
+      if(event.target.checked === true) {
+        task.setChecked(true);
+      } else {
+        task.setChecked(false);
+      }
+      console.log(Project.projects);
+      Project.storeLocal();
+    });
+    return taskComponent;
   }
 }

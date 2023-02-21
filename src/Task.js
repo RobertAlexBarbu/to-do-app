@@ -3,9 +3,17 @@ import { parseISO } from "date-fns";
 export default class Task {
   taskDescription;
   taskDeadline;
-  constructor(description, deadline) {
+  checked;
+  getChecked() {
+    return this.checked;
+  }
+  setChecked(value) {
+    this.checked = value;
+  }
+  constructor(description, deadline, checked=false) {
     this.taskDescription = description;
     this.taskDeadline = parseISO(deadline);
+    this.checked = checked;
   }
   getDescription() {
     return this.taskDescription;
@@ -28,8 +36,32 @@ export default class Task {
       case 3:
         stringDate += "April ";
         break;
+      case 4:
+        stringDate += "May ";
+        break;
+      case 5:
+        stringDate += "June ";
+        break;
+      case 6:
+        stringDate += "July ";
+        break;
+      case 7:
+        stringDate += "Augsut ";
+        break;
+      case 8:
+        stringDate += "September ";
+        break;
+      case 9:
+        stringDate += "October ";
+        break;
+      case 10:
+        stringDate += "November ";
+        break;
+      case 11:
+        stringDate += "December ";
+        break;
       default:
-        stringDate += "default";
+        stringDate += "";
     }
     if (Number.isNaN(month) === true) {
       stringDate += "No Deadline";
@@ -48,7 +80,12 @@ export default class Task {
     const taskCheckbox = document.createElement("input");
     taskCheckbox.setAttribute("type", "checkbox");
     taskCheckbox.classList.add("task-checkbox");
+     if(this.getChecked() === true) {
+      taskCheckbox.checked = true;
+    } else {
+      taskCheckbox.checked = false;
 
+    } 
     const taskName = document.createElement("div");
     taskName.classList.add("task-name");
     taskName.textContent = this.getDescription();
