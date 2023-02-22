@@ -7,6 +7,7 @@
     --white: #fafafa;
     --intenseWhite: white;
     --blue: #38BDF8;
+    --lightBlue: #38bff858;
     --red: #dc2626;
 }
 @font-face {
@@ -247,7 +248,7 @@ body {
     width: 100%;
 }
 .day {
-    font-size: 3rem;
+    font-size: 2rem;
     padding-left: 3rem;
     padding-right: 3rem;
     font-family: outfit-light;
@@ -261,7 +262,7 @@ body {
     justify-content: center;
     align-content: center;
     padding: 8px;
-    padding-top: 16px;
+    padding-top: 8px;
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 16px;
@@ -285,8 +286,11 @@ body {
 .task-name {
     width: 78%;
     font-family: outfit-regular;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-left: 5px;
+}
+.checked-task {
+    background-color: var(--lightBlue);
 }
 .edit-task-icon {
     width: 3rem;
@@ -350,7 +354,7 @@ button {
     background-color: var(--blue);
 }
 /* Create Project */
-.create-project-form, .edit-project-form, .add-task-form {
+.create-project-form, .edit-project-form, .add-task-form, .edit-task-form {
     width: min(90%, 400px);
     height: min(45%, 450px);
     background-color: var(--white);
@@ -366,7 +370,7 @@ button {
     transition: 0.15s ease-in;
     visibility: hidden;
 }
-.add-task-form {
+.add-task-form, .edit-task-form {
     height: min(65%, 600px);
 }
 .active {
@@ -472,9 +476,12 @@ input[type="checkbox"] {
 input[type="checkbox"]::before {
     content: url('./check-bold.svg');
     width: 15px;
-    color: var(--blue);
     visibility: hidden;
 }
 input[type="checkbox"]:checked::before {
     visibility: visible;
+}
+input[type="checkbox"]:checked {
+    background-color: var(--blue);
+    border-color: var(--blue);
 }
