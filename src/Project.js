@@ -239,11 +239,16 @@ export default class Project {
   static renderTaskHelper(task) {
     const taskComponent = task.taskComponent();
     const checkbox = taskComponent.querySelector(".task-checkbox"); 
+    if(checkbox.checked === true) {
+      taskComponent.classList.add("checked-task");
+    }
     checkbox.addEventListener("click", (event)=>{
       if(event.target.checked === true) {
         task.setChecked(true);
+        taskComponent.classList.add("checked-task");
       } else {
         task.setChecked(false);
+        taskComponent.classList.remove("checked-task");
       }
       console.log(Project.projects);
       Project.storeLocal();
