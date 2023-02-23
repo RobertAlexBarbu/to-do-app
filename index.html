@@ -151,29 +151,6 @@
             </div>
         </form>
     </div>
-    <!--Edit Task Modal-->
-    <div class="edit-task-modal">
-        <form class="edit-task-form">
-            <div class="close-icon close-edit-task-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close-box</title><path d="M19,3H16.3H7.7H5A2,2 0 0,0 3,5V7.7V16.4V19A2,2 0 0,0 5,21H7.7H16.4H19A2,2 0 0,0 21,19V16.3V7.7V5A2,2 0 0,0 19,3M15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4L13.4,12L17,15.6L15.6,17Z" /></svg>
-            </div>
-            <div class="form-text">Edit task</div>
-            <label for="task-description-edit">Task Description</label>
-            <textarea id="task-description-edit" rows="2" cols="10" maxlength="36" required></textarea>
-            <div class="error error-add"></div>
-            <label for="task-deadline-edit" class="deadline-label">Deadline</label>
-            <input type="date" min="2023-02-21"  id="task-deadline-edit" name="taskDeadline" required>
-            <div class="no-deadline-container">
-                <input type="checkbox" id="no-deadline-edit" name="noDeadline" value="true" class="task-checkbox">
-                <label for="no-deadline">No deadline</label>
-            </div>
-            <div class="buttons buttons-add-task">
-                <button id="edit-task-btn" class="blue-btn" type="submit">SAVE</button>
-                <button id="cancel-edit-task-btn" type="button">CANCEL</button>
-            </div>
-            <button id="delete-task-btn" class="red-btn">DELETE TASK</button>
-        </form>
-    </div>
 </body>
 </html>
 
