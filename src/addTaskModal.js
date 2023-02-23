@@ -1,13 +1,17 @@
+import {formatISO} from "date-fns";
 import Task from "./Task";
 import Project from "./Project";
+
 
 export default function addTaskModal() {
 
     const addTasktModal = document.querySelector(".add-task-modal");
-  
+
     /* the form controls */
     const inputTaskDescription = document.querySelector("#task-description");
     const inputDeadline = document.querySelector("#task-deadline");
+    const date = formatISO(new Date());
+    inputDeadline.setAttribute("min", date.slice(0, 10));
     const noDeadlineCheck = document.querySelector("#no-deadline");
     /* error box */
     const errorTaskDescription = document.querySelector('.error-add');
