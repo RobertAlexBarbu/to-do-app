@@ -11,6 +11,18 @@ export default class Project {
   addTask(task) {
     this.tasks.push(task);
   }
+  deleteTask(taskDescription, taskDeadlineUnformatted) {
+    let i = 0;
+    for(const task of this.getTasks()) {
+      if(task.getDescription() === taskDescription && task.getDeadlineUnformatted() === taskDeadlineUnformatted) {
+        break;
+      }
+      i += 1;
+    }
+    this.getTasks().splice(i, 1);
+    Project.storeLocal();
+    Project.renderProjects();
+  }
   getTasks() {
     return this.tasks;
   }
@@ -64,7 +76,7 @@ export default class Project {
       const project = new Project(current.name);
       for (const currentTask of current.tasks) {
         project.addTask(
-          new Task(currentTask.taskDescription, currentTask.taskDeadline, currentTask.checked)
+          new Task(currentTask.taskDescription, currentTask.taskDeadlineUnformatted, currentTask.checked)
         );
       }
       Project.addProject(project);

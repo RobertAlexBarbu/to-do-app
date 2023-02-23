@@ -299,7 +299,7 @@ body {
 }
 /* MODALS */
 
-.create-project-modal, .edit-project-modal, .add-task-modal {
+.create-project-modal, .edit-project-modal, .add-task-modal, .edit-task-modal {
     width: 100%;
     height: 100%;
     background-color: #3a3a3a50;
@@ -342,7 +342,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
 }
-#delete-project-btn {
+#delete-project-btn, #delete-task-btn {
     width: calc(28rem + 5px);
     align-self: center;
     margin-top: 10px;
@@ -371,7 +371,7 @@ button {
     visibility: hidden;
 }
 .add-task-form, .edit-task-form {
-    height: min(65%, 600px);
+    height: min(70%, 700px);
 }
 .active {
     transform: scale(1);
@@ -379,7 +379,7 @@ button {
     
 }
 
-.create-project-form label, .edit-project-form label, .add-task-form label {
+.create-project-form label, .edit-project-form label, .add-task-form label, .edit-task-form label {
     font-size: 2.5rem;
     font-family: outfit-light;
     margin-top: 25px;
@@ -423,7 +423,7 @@ textarea {
     align-self: center;
     resize: none;
 }
-#task-deadline {
+#task-deadline, #task-deadline-edit {
     width: 90%;
     margin-top: 10px;
     font-size: 2rem;
