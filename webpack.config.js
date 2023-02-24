@@ -10,7 +10,7 @@ module.exports = {
     devServer: {
         static: 'dist',
     },
-    mode: 'development',
+    mode: 'production',
     module: {
         rules: [
             {
