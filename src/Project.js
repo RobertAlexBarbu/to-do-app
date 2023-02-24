@@ -7,14 +7,23 @@ export default class Project {
     this.tasks = tasks;
   }
   name;
+  getName() {
+    return this.name;
+  }
+  setName(value) {
+    this.name = value;
+  }
   tasks;
   addTask(task) {
     this.tasks.push(task);
   }
   deleteTask(taskDescription, taskDeadlineUnformatted) {
     let i = 0;
-    for(const task of this.getTasks()) {
-      if(task.getDescription() === taskDescription && task.getDeadlineUnformatted() === taskDeadlineUnformatted) {
+    for (const task of this.getTasks()) {
+      if (
+        task.getDescription() === taskDescription &&
+        task.getDeadlineUnformatted() === taskDeadlineUnformatted
+      ) {
         break;
       }
       i += 1;
@@ -76,7 +85,11 @@ export default class Project {
       const project = new Project(current.name);
       for (const currentTask of current.tasks) {
         project.addTask(
-          new Task(currentTask.taskDescription, currentTask.taskDeadlineUnformatted, currentTask.checked)
+          new Task(
+            currentTask.taskDescription,
+            currentTask.taskDeadlineUnformatted,
+            currentTask.checked
+          )
         );
       }
       Project.addProject(project);
@@ -88,22 +101,31 @@ export default class Project {
   /* renders projects and the tasks of
      the currently selected project */
   static renderProjects() {
+    const tasksSection = document.querySelector(".tasks-section");
     const projectsSection = document.querySelector(".projects");
     projectsSection.textContent = "";
-    // special case: no exiting projects
+    // special case: no existing projects
     if (Project.projects.length === 0) {
       console.log("hey");
       const noProjects = document.createElement("div");
       noProjects.classList.add("no-existing-projects");
       noProjects.textContent = "Empty...";
       projectsSection.appendChild(noProjects);
+
+    }
+    if(Project.currentProjectIndex === -1 ) {
+      tasksSection.textContent = "";
+      const noTasks = document.createElement("div");
+      noTasks.classList.add("no-existing-tasks");
+      noTasks.textContent = "Select a project";
+      tasksSection.appendChild(noTasks);
     }
     // special case: selected/not selected project
     const currentBlock = document.querySelector("#current-block");
     const settingsIcon = document.querySelector(".settings-icon");
     if (Project.currentProjectIndex !== -1) {
       currentBlock.textContent =
-        Project.projects[Project.currentProjectIndex].name;
+        Project.projects[Project.currentProjectIndex].getName();
       currentBlock.classList.remove("no-project-selected");
       currentBlock.classList.add("current-project", "project");
       settingsIcon.style.visibility = "visible";
@@ -117,12 +139,12 @@ export default class Project {
     for (const currentProject of Project.projects) {
       const project = document.createElement("div");
       project.classList.add("project");
-      project.textContent = currentProject.name;
+      project.textContent = currentProject.getName();
       project.addEventListener("click", (event) => {
         localStorage.setItem("active", "true");
         let i = 0;
         for (const current of Project.projects) {
-          if (current.name === event.target.textContent) {
+          if (current.getName() === event.target.textContent) {
             break;
           }
           i += 1;
@@ -135,15 +157,24 @@ export default class Project {
       // if we do, we highlight it and render it's tasks
       if (Project.currentProjectIndex !== -1) {
         if (
-          currentProject.name ===
-          Project.projects[Project.currentProjectIndex].name
+          currentProject.getName() ===
+          Project.projects[Project.currentProjectIndex].getName()
         ) {
           // higlight selected project
           project.classList.add("current-project");
           // render the tasks of the selected project
 
           /* RENDER TASKS */
-          currentProject.renderTasks();
+          if (currentProject.getTasks().length === 0) {
+            const tasksSection = document.querySelector(".tasks-section");
+            tasksSection.textContent = "";
+            const noTasks = document.createElement("div");
+            noTasks.classList.add("no-existing-tasks");
+            noTasks.textContent = "Empty...";
+            tasksSection.appendChild(noTasks);
+          } else {
+            currentProject.renderTasks();
+          }
         }
       }
 
@@ -250,12 +281,12 @@ export default class Project {
   }
   static renderTaskHelper(task) {
     const taskComponent = task.taskComponent();
-    const checkbox = taskComponent.querySelector(".task-checkbox"); 
-    if(checkbox.checked === true) {
+    const checkbox = taskComponent.querySelector(".task-checkbox");
+    if (checkbox.checked === true) {
       taskComponent.classList.add("checked-task");
     }
-    checkbox.addEventListener("click", (event)=>{
-      if(event.target.checked === true) {
+    checkbox.addEventListener("click", (event) => {
+      if (event.target.checked === true) {
         task.setChecked(true);
         taskComponent.classList.add("checked-task");
       } else {
@@ -264,6 +295,13 @@ export default class Project {
       }
       console.log(Project.projects);
       Project.storeLocal();
+    });
+    const deleteIcon = taskComponent.querySelector(".edit-task-icon");
+    deleteIcon.addEventListener("click", () => {
+      Project.projects[Project.currentProjectIndex].deleteTask(
+        task.getDescription(),
+        task.getDeadlineUnformatted()
+      );
     });
     return taskComponent;
   }

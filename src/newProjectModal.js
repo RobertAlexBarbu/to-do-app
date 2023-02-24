@@ -1,7 +1,6 @@
 import Project from "./Project";
 
 export default function newProjectModal() {
-
   /* CREATE NEW PROJECT FUNCTIONALITY */
   /* the modal */
   const newProjectModal = document.querySelector(".create-project-modal");
@@ -25,14 +24,13 @@ export default function newProjectModal() {
 
   /* Close */
   let invalid = false;
-  const errorNewProject = document.querySelector('.error');
+  const errorNewProject = document.querySelector(".error");
 
   function closeNewProjectModal() {
     newProjectModal.classList.remove("visible");
     newProjectForm.classList.remove("active");
     invalid = false;
     errorNewProject.textContent = "";
-
   }
 
   newProjectModal.addEventListener("click", closeNewProjectModal);
@@ -43,27 +41,24 @@ export default function newProjectModal() {
   const cancelNewProjectBtn = document.querySelector("#cancel-new-btn");
   cancelNewProjectBtn.addEventListener("click", closeNewProjectModal);
 
-
-
   /* Create */
-  
-  
-  inputNewProjectName.addEventListener('input', (event)=>{
+
+  inputNewProjectName.addEventListener("input", (event) => {
     invalid = false;
     errorNewProject.textContent = "";
-    for(const current of Project.projects) {
-        if(current.name === event.target.value) {
-            errorNewProject.textContent = "Project already exists!";
-            invalid = true;
-            break;
-        }
+    for (const current of Project.projects) {
+      if (current.getName() === event.target.value) {
+        errorNewProject.textContent = "Project already exists!";
+        invalid = true;
+        break;
+      }
     }
     const regex = /^\s+$/;
-    if(regex.test(event.target.value) === true) {
-        errorNewProject.textContent = "Invalid project name!";
-        invalid = true;
+    if (regex.test(event.target.value) === true) {
+      errorNewProject.textContent = "Invalid project name!";
+      invalid = true;
     }
-  })
+  });
   const createNewProjectBtn = document.querySelector("#create-new-btn");
   createNewProjectBtn.addEventListener("click", (event) => {
     event.preventDefault();

@@ -15,7 +15,6 @@
         "lines-between-class-members": "off",
         "no-restricted-syntax": "off",
         "no-shadow": "off",
-        "import/no-extraneous-dependencies": ["off", {"devDependencies": true}],
-        "import/no-cycle": "off"
+        "import/no-extraneous-dependencies": ["off", {"devDependencies": true}]
     }
 }

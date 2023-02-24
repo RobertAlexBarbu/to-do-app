@@ -1,5 +1,4 @@
 import { parseISO } from "date-fns";
-import Project from "./Project";
 
 export default class Task {
   taskDescription;
@@ -12,7 +11,7 @@ export default class Task {
   setChecked(value) {
     this.checked = value;
   }
-  constructor(description, deadline, checked=false) {
+  constructor(description, deadline, checked = false) {
     this.taskDescription = description;
     this.taskDeadlineUnformatted = deadline;
     this.taskDeadline = parseISO(deadline);
@@ -89,12 +88,11 @@ export default class Task {
     const taskCheckbox = document.createElement("input");
     taskCheckbox.setAttribute("type", "checkbox");
     taskCheckbox.classList.add("task-checkbox");
-     if(this.getChecked() === true) {
+    if (this.getChecked() === true) {
       taskCheckbox.checked = true;
     } else {
       taskCheckbox.checked = false;
-
-    } 
+    }
     const taskName = document.createElement("div");
     taskName.classList.add("task-name");
     taskName.textContent = this.getDescription();
@@ -103,10 +101,6 @@ export default class Task {
     editTaskIcon.classList.add("edit-task-icon");
     editTaskIcon.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can-outline</title><path fill="red" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>';
-    
-    editTaskIcon.addEventListener("click", ()=>{
-      Project.projects[Project.currentProjectIndex].deleteTask(this.getDescription(), this.getDeadlineUnformatted());
-    })
     taskDetails.appendChild(taskCheckbox);
     taskDetails.appendChild(taskName);
     taskDetails.appendChild(editTaskIcon);

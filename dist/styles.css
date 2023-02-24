@@ -216,6 +216,14 @@ body {
     padding-top: 4px;
     padding-bottom: 4px;
 }
+.no-existing-tasks {
+    font-family: outfit-light;
+    font-size: 1.8rem;
+    color: var(--grayDark);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 3rem;
+}
 .current-project-container {
     display: flex;
     flex-direction: space-between;
@@ -424,7 +432,7 @@ textarea {
     align-self: center;
     resize: none;
 }
-#task-deadline, #task-deadline-edit {
+#task-deadline {
     width: 90%;
     margin-top: 10px;
     font-size: 2rem;
@@ -473,6 +481,7 @@ input[type="checkbox"] {
     border: 1px solid var(--grayMedium);
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 input[type="checkbox"]::before {
     content: url('./check-bold.svg');

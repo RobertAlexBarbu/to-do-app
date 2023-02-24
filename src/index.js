@@ -1,4 +1,3 @@
-
 import Project from "./Project";
 import newProjectModal from "./newProjectModal";
 import editProjectModal from "./editProjectModal";
@@ -8,4 +7,3 @@ Project.renderInitial();
 newProjectModal();
 editProjectModal();
 addTaskModal();
-
