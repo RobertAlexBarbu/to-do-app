@@ -18,6 +18,7 @@ export default class Project {
     this.tasks.push(task);
   }
   deleteTask(taskDescription, taskDeadlineUnformatted) {
+    localStorage.setItem("active", "true");
     let i = 0;
     for (const task of this.getTasks()) {
       if (
@@ -106,7 +107,6 @@ export default class Project {
     projectsSection.textContent = "";
     // special case: no existing projects
     if (Project.projects.length === 0) {
-      console.log("hey");
       const noProjects = document.createElement("div");
       noProjects.classList.add("no-existing-projects");
       noProjects.textContent = "Empty...";
@@ -209,15 +209,8 @@ export default class Project {
     const tasksSection = document.querySelector(".tasks-section");
     tasksSection.textContent = "";
     this.sortTasks();
-    console.log(this.getTasks());
     const renderedDates = [];
     for (const currentTask of this.getTasks()) {
-      console.log(
-        Task.stringifyDate(
-          getMonth(currentTask.getDeadline()),
-          getDate(currentTask.getDeadline())
-        )
-      );
 
       const currentDeadline = Task.stringifyDate(
         getMonth(currentTask.getDeadline()),
@@ -295,7 +288,6 @@ export default class Project {
         task.setChecked(false);
         taskComponent.classList.remove("checked-task");
       }
-      console.log(Project.projects);
       Project.storeLocal();
     });
     const deleteIcon = taskComponent.querySelector(".edit-task-icon");

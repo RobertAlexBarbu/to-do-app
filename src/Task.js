@@ -9,6 +9,7 @@ export default class Task {
     return this.checked;
   }
   setChecked(value) {
+    localStorage.setItem("active", "true");
     this.checked = value;
   }
   constructor(description, deadline, checked = false) {
