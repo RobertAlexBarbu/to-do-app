@@ -195,6 +195,8 @@ export default class Project {
   static #initializeDefault() {
     let project = new Project("Default Project");
     Project.addProject(project);
+    project.addTask(new Task("Create a new Project", ""));
+    project.addTask(new Task("Create a new Task", ""));
     Project.currentProjectIndex = 0;
     project = new Project("Default Project 2");
     Project.addProject(project);
