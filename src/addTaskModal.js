@@ -23,6 +23,7 @@ export default function addTaskModal() {
   /* Open */
   const addTaskIcon = document.querySelector(".add-task");
   addTaskIcon.addEventListener("click", () => {
+    if(Project.currentProjectIndex !== -1) {
     addTasktModal.classList.add("visible");
     inputTaskDescription.value = "";
     addTaskForm.classList.add("active");
@@ -30,6 +31,13 @@ export default function addTaskModal() {
     inputDeadline.value = "";
     errorTaskDescription.textContent = "";
     inputDeadline.removeAttribute("disabled");
+    }
+    else {
+      const selectProjectModal = document.querySelector(".select-project-modal");
+      const selectProjectBox = document.querySelector(".select-project");
+      selectProjectModal.classList.add("visible");
+      selectProjectBox.classList.add("active");
+    }
   });
 
   /* Close */

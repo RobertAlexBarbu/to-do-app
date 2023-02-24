@@ -15,11 +15,13 @@ export default function editProjectModal() {
   /* Open */
   const editProjectIcon = document.querySelector(".settings-icon");
   editProjectIcon.addEventListener("click", () => {
+    if(Project.currentProjectIndex !== -1) {
     editProjectModal.classList.add("visible");
     inputEditProjectName.value = "";
     inputEditProjectName.value =
       Project.projects[Project.currentProjectIndex].getName();
     editProjectForm.classList.add("active");
+    } 
   });
 
   /* Close */
