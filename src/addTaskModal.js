@@ -94,7 +94,10 @@ export default function addTaskModal() {
     ) {
       localStorage.setItem("active", "true");
       const description = inputTaskDescription.value;
-      const deadline = inputDeadline.value;
+      let deadline = inputDeadline.value;
+      if(inputDeadline.disabled === true) {
+        deadline = "";
+      }
       Project.projects[Project.currentProjectIndex].addTask(
         new Task(description, deadline)
       );

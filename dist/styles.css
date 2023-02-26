@@ -54,11 +54,11 @@ body {
     z-index: 1;
 }
 #header .logo {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
 }
 #header .app-name {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 
@@ -296,6 +296,7 @@ body {
     font-family: outfit-regular;
     font-size: 1.8rem;
     margin-left: 5px;
+    word-break: break-all;
 }
 .checked-task {
     background-color: var(--lightBlue);
@@ -373,7 +374,7 @@ button {
 /* Create Project */
 .create-project-form, .edit-project-form, .add-task-form, .edit-task-form, .select-project {
     width: min(90%, 400px);
-    height: min(45%, 450px);
+    height: min(50%, 500px);
     background-color: var(--white);
     border-radius: 10px;
     position: relative;
@@ -447,6 +448,7 @@ textarea {
     resize: none;
 }
 #task-deadline {
+    appearance: none;
     width: 90%;
     margin-top: 10px;
     font-size: 2rem;
